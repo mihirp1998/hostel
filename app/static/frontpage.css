@@ -1,0 +1,58 @@
+body{
+    background: url('http://www.bits-pilani.ac.in/Uploads/Dubai/adminfordubai/sections/2015-4-19--13-5-19-0_Campus_view_1.JPG');
+    background-size: cover;
+    background-repeat:no-repeat;
+    font-family: "Lato";
+    color: #ffffff;
+}
+
+section{
+    background: #2f96adc9;
+    display: inline-block;
+    padding-left: 5%;
+    padding-bottom: 4%;
+    padding-right: 5%;
+    margin: auto;
+    width: 35%;
+    text-align: center;
+    margin-left: 27.5%;
+    margin-top: 10%;
+    border-radius: 25px;
+}
+
+table{
+    font-size: 1.1em;
+}
+#sendbutton{
+    width: 75%;
+    background: #05ac05;
+    color: #ffffff;
+    padding: 2%;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #057205;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-weight: bold;
+    font-size: 1.05em; 
+}
+
+#name,#password{
+    width: 175%;
+    border-radius: 5px;
+    padding: 5px; 
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    background: #033d5a;
+    border-color: #ffffff;
+    border-style: none;
+    color: #ffffff; 
+    font-size: 1.05em;
+    margin-left: 8px;
+}
+
+#logo{
+    width: 25%;
+    padding-top: 5%;
+    padding-bottom: 5%; 
+}

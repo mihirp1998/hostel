@@ -1,0 +1,83 @@
+#myInput{
+    width: 50%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; 
+    margin-top: 12px;
+}
+
+body{
+    background-image: url("../img/college.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+p{
+    font-family: Lato, Courier, monospace;
+    font-size: 20px;
+}
+div.major{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+h2.main{
+    color: #39add1;
+    font-family:'Source Sans Pro', Courier, monospace;
+    font-size: 35px;
+    text-align: center;
+    text-justify: kashida
+}
+ul{
+    width:60%;
+    color:white;
+    margin:auto;
+    padding: auto;
+    list-style: none;
+}
+ul li{
+    float:left;
+    text-decoration:none;
+}
+ul li a{
+    text-decoration:none;
+    color: white;
+    font-family: 'Source Sans Pro', Courier, monospace;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0px 20px;
+    text-align: center;
+    line-height: 60px; /* makes text vertically center */
+    height:60px;
+}
+ul li:hover{
+    background-color: white;
+    color:#39add1;
+    height: 60px;
+    font-family: 'Source Sans Pro', Courier, monospace;
+    font-weight: bold;
+}
+ul li a:hover{
+    color:#39add1;
+    font-weight: bold;
+}
+table,th,td{
+border: 1px solid white;
+border-collapse: collapse;
+font-family: Courier New, Courier, monospace;
+padding: 10px;
+}
+table#t01 tr {
+background-color: #eee;
+}
+
+table#t01 th {
+background-color:#39add1;
+color: black;
+}
+
+table#t01 tr:hover {
+/* Add a grey background color to the table header and on hover */
+background-color: #d8d8d8;
+}

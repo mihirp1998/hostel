@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            BITS Pilani Dubai Campus Hostel Log-in 
+        </title>
+      <script src="jquery.js"></script>
+        <link rel="stylesheet" href="frontpage.css">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/BITS_Pilani-Logo.svg/1024px-BITS_Pilani-Logo.svg.png">
+    </head>
+
+    <body>
+        <section>
+            <div id="logincode">
+                <img src="logo.png" id="logo"/>
+                <h1>Hostel Database Log In</h1>
+                <table>
+                    <tr>
+                        <th>
+                            <label for="name"></label>
+                        </th>
+                        <td>
+                            <input type="text" id="name" name="name" placeholder="Login ID"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            <label for="password"></label>
+                        </th>
+                        <td>
+                            <input type="password" id="password" name="password" placeholder="Password"/>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <input type="submit" value="LOGIN" id="sendbutton" onclick="signin()"/>
+            </div>
+        </section>
+        <script src="signin.js"></script>
+    </body>
+</html>
