@@ -18,7 +18,7 @@ var docMisc = document.getElementById("miscl");
 var editBut = document.getElementById("Edit").onclick= function(){ myFunction(); };
 var saveBut = document.getElementById("Save");
 var editDate = document.getElementById("editDate");
-$("#back").on('click',function(){window.location.assign("http://localhost:5000/next")});
+$("#back").on('click',function(){window.location.assign("http://172.16.100.8:5000/next")});
 /*docName.value=studentName;
 docblock.value=blockNum;
 docRoom.value=roomNum;
@@ -59,7 +59,7 @@ saveBut.onclick=function(){
     roomNum=docRoom.value;
     idNum=docID.value.toUpperCase();
     amount=docAmount.value;
-    $.post("http://localhost:5000/dataSave",{s:studentName,b:blockNum,r:roomNum,i:idNum,a:amount})
+    $.post("http://172.16.100.8:5000/dataSave",{s:studentName,b:blockNum,r:roomNum,i:idNum,a:amount})
     console.log(studentName);
     console.log(blockNum);
     console.log(roomNum);

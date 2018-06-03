@@ -5,14 +5,22 @@ var sl=1;
 
 var roomNo= [];
 var idNo= [];
-$.get("http://localhost:5000/getTable", function(data){
+$.get("http://172.16.100.8:5000/{{table}}", function(data){
     console.log(data);
 
     insertData(data);});
 console.log(roomNo.length);
 
+$(".generate").on("click",function(){
+    window.location.assign("http://172.16.100.8:5000/generateCSV.csv")
+});
 
-
+$(".passOut").on("click",function(){
+    window.open("http://172.16.100.8:5000/passOut")
+});
+$(".insertExcel").on("click",function(){
+    window.open("http://172.16.100.8:5000/insertExcel")
+});
 
 function filterSelection(i){
     var td1;
@@ -36,7 +44,7 @@ function filterSelection(i){
     }
 
     else if(z.checked){
-        td1 = tr[i].getElementsByTagName("td")[6];
+        td1 = tr[i].getElementsByTagName("td")[5];
     }
     
     return td1;
@@ -67,17 +75,18 @@ function insertData(data){
     var SroomNo = data[2][i];
     var SidNo=data[0][i];
     var Sblock=data[3][i];
-    var Samount=data[4][i];
-    $(".tbodyL").append("<tr class=\"table-secondary\" scope=\"row\"><td>"+sl+"</td><td>"+SroomNo+"</td><td>"+Sblock+"</td><td>"+Sname+"</td><td>"+ Samount + "</td><td>4/25/2017</td><td>"+SidNo+"</td></tr>");
+
+    $(".tbodyL").append("<tr class=\"table-secondary\" scope=\"row\"><td>"+sl+"</td><td>"+SroomNo+"</td><td>"+Sblock+"</td><td>"+Sname+"</td><td>123456789</td><td>"+SidNo+"</td></tr>");
     sl=sl+1;
 }
 
 $('#t01').find('tr').click( function(){
-  var row = $(this).find('td:nth-child(7)').text();
- /* alert('You clicked ' + row);*/
-    $.get("http://localhost:5000/getInfo",{name:row}, function(data){
+  var row = $(this).find('td:nth-child(6)').text();
+  alert('You clicked ' + row);
+
+    $.get("http://172.16.100.8:5000/getInfo",{name:row}, function(data){
         console.log(data);
-        window.location.assign("http://localhost:5000/nextInfo");
+        window.location.assign("http://172.16.100.8:5000/nextInfo");
         }
         );
 });
