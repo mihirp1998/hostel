@@ -38,12 +38,12 @@ def upload_file():
 		f = request.files['file']
 		print(type(f))
 		f.save(secure_filename('./file.csv'))
-		engine = create_engine("mysql://root:helloworld@localhost/hostel")
+		engine = create_engine("mysql://hostel:hostel123@localhost/hostel")
 		con = engine.connect()
 		# df = pd.DataFrame.from_csv('./file.csv')
 		df = pd.DataFrame.from_csv('./file.csv',index_col=None)
 		df.columns = ['id','name','Room_No','Block']
-		df.to_sql('Student',con,if_exists='append',flavor='sqlite',index= False)
+		df.to_sql('Student',con,if_exists='append',index= False)
 		return render_template('insertExcel.html',article='<p>File Uploaded</p>')
 	except Exception as e:
 		print(e)
@@ -105,10 +105,13 @@ def dataSave():
 	db,cur = connectDb()
 	r = request.form['r']
 	i = request.form['i']
-	a = request.form['a']
 	b = request.form['b']
-	print("data",r,b,a,i)
-	cur.execute("UPDATE Student SET  Room_No= %s, Block= %s, cost= %s WHERE id = %s;",[r,b,a,i])
+	k = request.form['k']
+	t = request.form['t']
+	c = request.form['c']
+	m = request.form['m']
+	print("data",r,b,i,k,t,c,m)
+	cur.execute("UPDATE Student SET  Room_No= %s, Block= %s, keyl = %s,tablel = %s, chairl = %s, misc = %s  WHERE id = %s;",[r,b,k,t,c,m,i])
 	db.commit()
 	result_set = cur.fetchall()
 	print(result_set)
@@ -171,8 +174,8 @@ def getTable():
 
 def connectDb():
 	db = MySQLdb.connect(host="localhost",    # your host, usually localhost
-	                     user="root",         # your username
-	                     passwd="helloworld",  # your password
+	                     user="hostel",         # your username
+	                     passwd="hostel123",  # your password
 	                     db="hostel")        # name of the data base
 
 
@@ -302,6 +305,10 @@ def sendJs():
 @app.route('/excel.css')
 def sendExcelCss():
 	return send_from_directory('./static','excel.css')	
+
+@app.route('/cover.jpg')
+def sendCoverjpg():
+	return send_from_directory('./static','cover.jpg')	
 
 @app.route('/excel.js')
 def sendExcelJs():

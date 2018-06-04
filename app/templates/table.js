@@ -11,14 +11,14 @@ $.get("http://172.16.100.8:5000/{{table}}", function(data){
     insertData(data);});
 console.log(roomNo.length);
 
-$(".generate").on("click",function(){
+$("#generate").on("click",function(){
     window.location.assign("http://172.16.100.8:5000/generateCSV.csv")
 });
 
-$(".passOut").on("click",function(){
+$("#passOut").on("click",function(){
     window.open("http://172.16.100.8:5000/passOut")
 });
-$(".insertExcel").on("click",function(){
+$("#insertExcel").on("click",function(){
     window.open("http://172.16.100.8:5000/insertExcel")
 });
 

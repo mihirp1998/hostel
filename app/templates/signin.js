@@ -5,7 +5,7 @@ function signin(){
     if(x.value=="admin"){
         if(y.value=="1234"){
 
-             window.location.assign('http://localhost:5000/next');
+             window.location.assign('http://172.16.100.8:5000/next');
     
         }
 

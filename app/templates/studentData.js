@@ -39,11 +39,9 @@ saveBut.disabled=true;
 
 
 function myFunction() {
-/*  docName.readOnly=false;
-*/    docblock.readOnly=false;
+    docblock.readOnly=false;
     docRoom.readOnly=false;
-/*    docID.readOnly=false;*/
-    docAmount.readOnly=false;
+
 docKey.readOnly=false;
 docTable.readOnly=false;
 docChair.readOnly=false;
@@ -58,13 +56,17 @@ saveBut.onclick=function(){
     blockNum=docblock.value.toUpperCase();
     roomNum=docRoom.value;
     idNum=docID.value.toUpperCase();
-    amount=docAmount.value;
-    $.post("http://172.16.100.8:5000/dataSave",{s:studentName,b:blockNum,r:roomNum,i:idNum,a:amount})
+    roomNum=docRoom.value;
+    tablel=docTable.value;
+    keyl=docKey.value;
+    chairl=docChair.value;
+    miscl=docMisc.value;
+    $.post("http://172.16.100.8:5000/dataSave",{s:studentName,b:blockNum,r:roomNum,i:idNum,t:tablel,k:keyl,c:chairl,m:miscl})
     console.log(studentName);
     console.log(blockNum);
     console.log(roomNum);
     console.log(idNum);
-    console.log(amount);
+    
 
     editBut.disabled=false;
     saveBut.disabled=true;
@@ -76,7 +78,7 @@ docMisc.readOnly=true;
 */    docblock.readOnly=true;
     docRoom.readOnly=true;
 /*    docID.readOnly=true;
-*/    docAmount.readOnly=true;
+*/   
 
     
 }
